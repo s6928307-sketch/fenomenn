@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Сабақтар</title>
+
+<style>
+body{
+    font-family: Arial;
+    background-image: url("ФН ФОН.jpg");
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* ҚАРА ФОН */
+.modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex; /* БІРДЕН АШЫҚ */
+    justify-content:center;
+    align-items:center;
+}
+
+/* ІШКІ ТӨРТБҰРЫШ */
+.box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    width:800px;
+    text-align:center;
+    position:relative;
+}
+
+/* ЖАБУ КНОПКА */
+.close{
+    position:absolute;
+    right:15px;
+    top:10px;
+    font-size:25px;
+    cursor:pointer;
+}
+
+select{
+    padding:10px;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+table{
+    margin:auto;
+    border-collapse:collapse;
+    width:90%;
+    display:none;
+}
+
+th, td{
+    border:1px solid black;
+    padding:10px;
+}
+th{
+    background:DodgerBlue;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- POPUP БІРДЕН АШЫЛАДЫ -->
+<div class="modal" id="modal">
+
+<div class="box">
+<span class="close" onclick="closeModal()">✖</span>
+
+<h2>Таңдау пәнді таңда</h2>
+
+<select onchange="showTable(this.value)">
+<option value="">Таңдау пәнді таңда</option>
+<option value="info_math">Информатика-Математика</option>
+<option value="phys_math">Физика-Математика</option>
+<option value="geo_math">География-Математика</option>
+<option value="chem_bio">Химия-Биология</option>
+<option value="geo_eng">География-Ағылшын</option>
+<option value="geo_bio">География-Биология</option>
+<option value="geo_history">География-Дүниежүзі тарих</option>
+<option value="history_eng">Дүниежүзі тарих-Ағылшын</option>
+<option value="history_law">Дүниежүзі тарих-Құқық</option>
+</select>
+
+<table id="info_math">
+<tr><th>Күн</th><th>Сабақ</th><th>Уақыты</th></tr>
+<tr><td>Дүйсенбі</td><td>Информатика</td><td>15:00</td></tr>
+<tr><td>Сәрсенбі</td><td>Математика</td><td>15:00</td></tr>
+<tr><td>Сейсенбі</td><td>Информатика</td><td>15:00</td></tr>
+<tr><td>Бейсенбі</td><td>Тест</td><td>15:00</td></tr>
+<tr><td>Жұма</td><td>Математика</td><td>15:00</td></tr>
+<tr><td>Сенбі</td><td>Қазақстан тарихы</td><td>11:30</td></tr>
+</table>
+
+<table id="phys_math">
+<tr><th>Күн</th><th>Сабақ</th><th>Уақыты</th></tr>
+<tr><td>Дүйсенбі</td><td>МС</td><td>15:00</td></tr>
+<tr><td>Сәрсенбі</td><td>Физика</td><td>15:00</td></tr>
+<tr><td>Сейсенбі</td><td>Математика</td><td>15:00</td></tr>
+<tr><td>Бейсенбі</td><td>Тест</td><td>15:00</td></tr>
+<tr><td>Жұма</td><td>Физика</td><td>15:00</td></tr>
+<tr><td>Сенбі</td><td>Қазақстан тарихы</td><td>11:30</td></tr>
+</table>
+<table id="geo_math">
+<tr><th>Күн</th><th>Сабақ</th><th>Уақыты</th></tr>
+<tr><td>Дүйсенбі</td><td>География</td><td>15:00</td></tr>
+<tr><td>Сәрсенбі</td><td>Математика</td><td>15:00</td></tr>
+<tr><td>Сейсенбі</td><td>МС</td><td>15:00</td></tr>
+<tr><td>Бейсенбі</td><td>География</td><td>15:00</td></tr>
+<tr><td>Жұма</td><td>Тест</td><td>15:00</td></tr>
+<tr><td>Сенбі</td><td>Қазақстан тарихы</td><td>09:30</td></tr>
+<tr><td>Сенбі</td><td>Математика</td><td>12:30</td></tr>
+</table>
+
+<table id="chem_bio">
+<tr><td>Дүйсенбі</td><td>Химия</td><td>15:00</td></tr>
+<tr><td>Сәрсенбі</td><td>Тест</td><td>15:00</td></tr>
+<tr><td>Сейсенбі</td><td>Биология</td><td>15:00</td></tr>
+<tr><td>Бейсенбі</td><td>Химия</td><td>15:00</td></tr>
+<tr><td>Жұма</td><td>Қазақстан тарихы</td><td>15:00</td></tr>
+<tr><td>Сенбі</td><td>Биология</td><td>10:00</td></tr>
+<tr><td>Сенбі</td><td>МС</td><td>15:00</td></tr>
+</table>
+</table>
+
+<table id="geo_eng">
+<tr><td>Дүйсенбі</td><td>Ағылшын</td><td>15:00</td></tr>
+<tr><td>Сәрсенбі</td><td>Қазақстан тарихы</td><td>15:00</td></tr>
+<tr><td>Сейсенбі</td><td>География</td><td>15:00</td></tr>
+<tr><td>Бейсенбі</td><td>Ағылшын</td><td>15:00</td></tr>
+<tr><td>Жұма</td><td>МС</td><td>15:00</td></tr>
+<tr><td>Сенбі</td><td>География</td><td>11:30</td></tr>
+<tr><td>Сенбі</td><td>Тест</td><td>11:30</td></tr>
+</table>
+
+<table id="geo_bio">
+<tr><td>Дүйсенбі</td><td>МС</td><td>15:00</td></tr>
+<tr><td>Сәрсенбі</td><td>Биология</td><td>15:00</td></tr>
+<tr><td>Сейсенбі</td><td>География</td><td>15:00</td></tr>
+<tr><td>Бейсенбі</td><td>Қазақстан тарихы</td><td>15:00</td></tr>
+<tr><td>Жұма</td><td>Биология</td><td>15:00</td></tr>
+<tr><td>Сенбі</td><td>География</td><td>10:00</td></tr>
+<tr><td>Сенбі</td><td>Тест</td><td>14:00</td></tr>
+</table>
+
+<table id="geo_history">
+<tr><td>Дүйсенбі</td><td>МС</td><td>15:00</td></tr>
+<tr><td>Сәрсенбі</td><td>ДЖТ</td><td>15:00</td></tr>
+<tr><td>Сейсенбі</td><td>География</td><td>15:00</td></tr>
+<tr><td>Бейсенбі</td><td>Қазақстан тарихы</td><td>15:00</td></tr>
+<tr><td>Жұма</td><td>ДЖТ</td><td>15:00</td></tr>
+<tr><td>Сенбі</td><td>География</td><td>10:00</td></tr>
+<tr><td>Сенбі</td><td>Тест</td><td>14:00</td></tr>
+</table>
+
+<table id="history_eng">
+<tr><td>Дүйсенбі</td><td>ДЖТ</td><td>15:00</td></tr>
+<tr><td>Сәрсенбі</td><td>МС</td><td>15:00</td></tr>
+<tr><td>Сейсенбі</td><td>Ағылшын тілі</td><td>15:00</td></tr>
+<tr><td>Бейсенбі</td><td>ДЖТ</td><td>15:00</td></tr>
+<tr><td>Жұма</td><td>Ағылшын тілі</td><td>15:00</td></tr>
+<tr><td>Сенбі</td><td>Қазақстан тарихы</td><td>09:30</td></tr>
+<tr><td>Сенбі</td><td>Тест</td><td>14:00</td></tr>
+</table>
+
+<table id="history_law">
+<tr><td>Дүйсенбі</td><td>Құқық</td><td>15:00</td></tr>
+<tr><td>Сәрсенбі</td><td>ДЖТ</td><td>15:00</td></tr>
+<tr><td>Сейсенбі</td><td>Тест</td><td>15:00</td></tr>
+<tr><td>Бейсенбі</td><td>Құқық</td><td>15:00</td></tr>
+<tr><td>Жұма</td><td>ДЖТ</td><td>15:00</td></tr>
+<tr><td>Сенбі</td><td>МС</td><td>11:00</td></tr>
+<tr><td>Сенбі</td><td>тарих</td><td>14:30</td></tr>
+</table>
+
+</div>
+</div>
+
+<script>
+function closeModal(){
+    document.getElementById("modal").style.display="none";
+}
+
+function showTable(id){
+    let tables = document.querySelectorAll("table");
+    tables.forEach(t => t.style.display="none");
+
+    if(id){
+        document.getElementById(id).style.display="table";
+    }
+}
+</script>
+
+</body>
+</html>

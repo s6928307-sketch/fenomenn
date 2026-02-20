@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>FENOMEN Кесте</title>
+
+<style>
+body{
+    font-family: Arial;
+    background-image: url("ФН ФОН.jpg");
+    text-align:center;
+    padding:40px;
+}
+
+/* ҚАТАРЛАР */
+.grid7{display:grid;grid-template-columns:repeat(7,120px);justify-content:left;gap:10px;margin:15px;}
+.grid4{display:grid;grid-template-columns:repeat(4,120px);justify-content:left;gap:10px;margin:15px;}
+.grid2{display:grid;grid-template-columns:repeat(2,120px);justify-content:left;gap:10px;margin:15px;}
+.grid1{display:grid;grid-template-columns:repeat(1,120px);justify-content:left;gap:10px;margin:15px;}
+
+.box{
+    background:MidnightBlue;
+    color:white;
+    padding:15px;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:0 5px 12px rgba(0,0,0,0.3);
+    font-weight:bold;
+    transition:0.2s;
+}
+
+.box:hover{transform:scale(1.1);}
+.back{background:MidnightBlue;color:white;}
+.hidden{display:none;}
+
+table{margin:auto;border-collapse:collapse;background:white;}
+td,th{border:1px solid black;padding:10px 15px;}
+</style>
+</head>
+
+<body>
+
+<!-- БІРДЕН СЫНЫПТАР ШЫҒАДЫ -->
+<div id="classes">
+
+<div class="grid7">
+<div class="box" onclick="openTable('11А')">11А</div>
+<div class="box" onclick="openTable('11Ә')">11Ә</div>
+<div class="box" onclick="openTable('11Б')">11Б</div>
+<div class="box" onclick="openTable('11В')">11В</div>
+<div class="box" onclick="openTable('11Г')">11Г</div>
+<div class="box" onclick="openTable('11Ғ')">11Ғ</div>
+<div class="box" onclick="openTable('11Д')">11Д</div>
+</div>
+
+<div class="grid4">
+<div class="box" onclick="openTable('10А')">10А</div>
+<div class="box" onclick="openTable('10Ә')">10Ә</div>
+<div class="box" onclick="openTable('10Б')">10Б</div>
+<div class="box" onclick="openTable('10В')">10В</div>
+</div>
+
+<div class="grid2">
+<div class="box" onclick="openTable('9А')">9А</div>
+<div class="box" onclick="openTable('9Ә')">9Ә</div>
+</div>
+
+<div class="grid2">
+<div class="box" onclick="openTable('8А')">8А</div>
+<div class="box" onclick="openTable('8Ә')">8Ә</div>
+</div>
+
+<div class="grid1"><div class="box" onclick="openTable('7А')">7А</div></div>
+<div class="grid1"><div class="box" onclick="openTable('6А')">6А</div></div>
+<div class="grid1"><div class="box" onclick="openTable('5А')">5А</div></div>
+
+</div>
+
+<!-- КЕСТЕ -->
+<div id="table" class="hidden">
+<h2 id="className"></h2>
+
+<table>
+<tr><th>Дүйсенбі</th><th>Сейсенбі</th><th>Сәрсенбі</th><th>Бейсенбі</th><th>Жұма</th></tr>
+<tr><td>Ағылшын тілі</td><td>Ағылшын тілі</td><td>Информатика</td><td>Логика</td><td>ДШ</td></tr>
+<tr><td>ДШ</td><td>Химия</td><td>Биология</td><td>Құқық негіздері</td><td>Алгебра</td></tr>
+<tr><td>Қазақстан тарихы</td><td>Алгебра</td><td>Информатика</td><td>Геометрия</td><td>Орыс тілі</td></tr>
+<tr><td>Сынып сағаты</td><td>Әдебиет</td><td>Әдебиет</td><td>Алгебра</td><td>Алгебра</td></tr>
+</table>
+
+<br>
+<div class="box back" onclick="backClasses()">⬅ Артқа</div>
+</div>
+
+<script>
+function openTable(cls){
+classes.style.display="none";
+table.style.display="block";
+className.innerText=cls+" сыныбының кестесі";
+}
+
+function backClasses(){
+table.style.display="none";
+classes.style.display="block";
+}
+</script>
+
+</body>
+</html>

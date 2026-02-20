@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FENOMEN</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Times New Roman", serif;
+scroll-behavior:smooth;
+}
+
+/* ===== 3 СЫЗЫҚ ===== */
+.menu-icon{
+position:fixed;
+top:20px;
+right:20px;
+font-size:30px;
+color:#001a4d;
+cursor:pointer;
+z-index:1001;
+}
+
+/* SIDE MENU */
+.side-menu{
+position:fixed;
+top:0;
+right:-260px;
+width:260px;
+height:100%;
+background:#001a4d;
+padding-top:20px;
+transition:0.4s;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+z-index:1000;
+}
+.side-menu.active{ right:0; }
+
+.close-btn{
+color:white;
+font-size:25px;
+text-align:right;
+padding:10px 20px;
+cursor:pointer;
+}
+
+.menu-links a{
+display:block;
+color:white;
+padding:15px 25px;
+text-decoration:none;
+font-size:18px;
+}
+.menu-links a:hover{ background:#0055ff; }
+
+.register{
+background:#0033aa;
+color:white;
+text-align:center;
+padding:15px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+.register:hover{ background:#0055ff; }
+
+section{
+padding:120px 20px;
+min-height:100vh;
+}
+
+h1{
+text-align:center;
+margin-bottom:40px;
+font-size:40px;
+color:#001a4d;
+}
+
+/* ===== ABOUT CARDS ===== */
+.top-cards{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-bottom:30px;
+}
+
+.bottom-card{
+display:flex;
+justify-content:center;
+}
+
+.box{
+background:white;
+padding:20px;
+border-radius:15px;
+width:300px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+text-align:center;
+}
+.box:hover{ transform:translateY(-8px); }
+
+.box img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+@media(max-width:768px){
+.top-cards{
+flex-direction:column;
+align-items:center;
+}
+}
+#teachers{background-color:SteelBlue;color:white;text-align:center;}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;margin-top:40px;}
+.card{background:white;padding:15px;border-radius:15px;}
+.card img{width:100%;height:270px;object-fit:cover;border-radius:10px;}
+.card p{margin-top:10px;color:black;}
+.card button{margin-top:15px;padding:10px 20px;border:none;background:#764ba2;color:white;border-radius:25px;}
+.card button a{color:white;text-decoration:none;transition:0.3s;}
+.card button a:hover{color:DodgerBlue;}
+#subjects{background-image:url("ФН ФОН.jpg");background-size:cover;text-align:center;color:white;}
+.textBox{background:MidnightBlue;color:white;padding:20px;border-radius:15px;font-size:18px;line-height:1.6;margin-bottom:40px;}
+.buttons{display:flex;justify-content:center;gap:40px;}
+.btn{background:DodgerBlue;color:white;padding:25px 60px;border-radius:20px;font-size:22px;text-decoration:none;box-shadow:0 10px 20px rgba(0,0,0,0.3);transition:0.3s;}
+.btn:hover{transform:scale(1.1);} 
+.buttons .btn{
+    background: blue;
+    color: white;
+}
+.buttons .btn:hover{
+    background: darkblue;
+}
+
+
+#achievements{
+text-align:center;
+padding:60px 20px;
+background:#0b1f4d; /* жабық көк */
+color:white;
+}
+
+.cards{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.card{
+background:white;
+color:black;
+padding:25px;
+border-radius:15px;
+width:260px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.number{
+font-size:28px;
+font-weight:bold;
+margin:10px 0;
+}
+
+/* Түстер */
+
+.science{
+border-top:6px solid purple;
+}
+
+.unt{
+border-top:6px solid #1e88e5;
+}
+
+.olymp{
+border-top:6px solid gold;
+}
+/* ===== БАЙЛАНЫС ===== */
+.contact-section{
+background:#001a4d;
+}
+
+.contact-box{
+text-align:center;
+padding:80px 20px;
+background:#001a4d;
+min-height:100vh;
+color:white;
+}
+
+.contact-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+background:white;
+color:black;
+padding:18px 28px;
+border-radius:30px;
+font-size:20px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+box-shadow:0 6px 20px rgba(0,0,0,0.4);
+cursor:pointer;
+}
+.btn:hover{ transform:scale(1.08); }
+
+/* POPUP */
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center;
+}
+
+.popup-box{
+background:#001a4d;
+padding:35px;
+border-radius:25px;
+text-align:center;
+color:white;
+}
+
+.popup-box a{
+display:block;
+margin:12px;
+padding:12px;
+background:#0055ff;
+border-radius:12px;
+text-decoration:none;
+color:white;
+}
+
+/* ===== ЖАБУ БАТЫРМАСЫ ===== */
+.close-button{
+margin-top:20px;
+padding:12px 30px;
+border-radius:30px;
+border:none;
+background:#0033aa;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+.close-button:hover{
+background:#0055ff;
+transform:scale(1.08);
+}
+button{
+    margin-top:10px;
+    padding:10px 20px;
+    border-radius:10px;
+    border:none;
+    background:white;
+    font-weight:bold;
+}
+.achievements{
+    background:#001a4d;
+}
+#zhetistikter{
+    color: white;
+}
+.subtitle{
+    opacity:0.8;
+    margin-bottom:40px;
+    color:white;
+    text-align:center;
+    font-size: 26px;}
+#news{
+    background: linear-gradient(135deg,#001f5c,#0040ff);
+    color:white;
+    padding-bottom:60px;
+}
+
+#news{
+    background: linear-gradient(135deg,#001f5c,#0040ff);
+    color:white;
+}
+
+#news .title{
+    text-align:center;
+    font-size:45px;
+    padding:60px 20px 30px;
+    color: white;
+}
+
+#news .news-container{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:30px;
+    padding:40px;
+    max-width:1200px;
+    margin:auto;
+}
+
+#news .news-card{
+    background: rgba(255,255,255,0.1);
+    border-radius:20px;
+    padding:25px;
+    backdrop-filter: blur(10px);
+    transition:0.4s;
+    cursor:pointer;
+    position:relative;
+}
+
+#news .news-card:hover{
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(255,255,255,0.2);
+    box-shadow:0 0 25px #00aaff;
+}
+
+#news .news-card h2{
+    margin:15px 0;
+}
+
+#news .date{
+    background:#00aaff;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+#news .popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+}
+
+#news .popup-content{
+    background:white;
+    color:black;
+    padding:40px;
+    border-radius:20px;
+    width:90%;
+    max-width:500px;
+    text-align:center;
+    position:relative;
+    animation:pop 0.4s ease;
+}
+
+@keyframes pop{
+    from{transform:scale(0.5);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+
+#news .close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:25px;
+    cursor:pointer;
+    color:red;
+}
+
+.butin{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    background:#0040ff;
+    color:white;
+    cursor:pointer;
+}
+
+.butin:hover{
+    background:#001f5c;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="menu-icon" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
+
+<div class="side-menu" id="menu">
+<div>
+<div class="close-btn" onclick="toggleMenu()">✖</div>
+<div class="menu-links">
+<a href="#home">Басты бет</a>
+<a href="#about">Мектеп жайлы</a>
+<a href="#teachers">Ұстаздар</a>
+<a href="#subjects">Пәндер</a>
+<a href="#achievements">Жетістіктер</a>
+<a href="#news">Жаңалықтар</a>
+<a href="#contact">Байланыс</a>
+</div>
+</div>
+<a href="8.html"><div class="register">ТІРКЕЛУ</div></a>
+</div>
+
+<section id="home" style="
+background-image:url('фон.png');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+"></section>
+
+
+<!-- ===== ABOUT ===== -->
+<section id="about" style="background:rgb(3, 31, 59);">
+<h1 style="color:white;">Біздің мектеп туралы</h1>
+
+<div class="top-cards">
+    <div class="box"><a href="Мектептің тарихы.html"><img src="тарихы.jpeg"></a><h3>Мектептің тарихы</h3></div>
+<div class="box"><a href="19.html"><img src="Ашылған жыл.jpeg"></a><h3>Ашылған жылы</h3></div>
+</div>
+<div class="bottom-card">
+<div class="box"><a href="18.html"><img src="https://pm-production-bucket.s3.eu-central-1.amazonaws.com/attachments/blog/image/935/attachment/default-30f8ee0d056fe0fcdfe649f6b9cec0db.jpg"></a><h3>Мақсаты мен миссиясы</h3></div>
+</div>
+
+</div>
+</section>
+
+<section id="teachers"><h1 style="color:white;">Ұстаздар</h1>
+<div class="gallery">
+
+        <div class="card">
+            <img src="Е.jpeg" alt="">
+            <p>Ержан Жанысбайұлы</p>
+            <button><a href="Ержан ағай док.html">Толығырақ</a></button>
+        </div>
+
+	<div class="card">
+            <img src="Нұрәділ ағай.jpeg" alt="">
+            <p>Нұрәділ Нұрланұлы</p>
+            <button><a href="Нұрәділ ағай док.html">Толығырақ</a></button>
+        </div>
+
+	<div class="card">
+            <img src="І.jpeg" alt="">
+            <p>Ілияс Сұлтанбекұлы</p>
+            <button><a href="ілияс ағай док.html">Толығырақ</a></button>
+        </div>
+
+	 <div class="card">
+            <img src="Ор.jpg" alt="">
+            <p>Оразкүл Құдайбергенқызы</p>
+            <button><a href="Оразкүл апай док.html">Толығырақ</a></button>
+        </div>
+	
+
+        <div class="card">
+            <img src="Ай.jpeg" alt="">
+            <p>Айгерім Кенжебайқызы</p>
+            <button><a href="Айгерім апай док.html">Толығырақ</a></button>
+        </div>
+
+        
+        <div class="card">
+            <img src="М.jpeg" alt="">
+            <p>Мұхит Елубекұлы</p>
+            <button><a href="Мұхит ағай док.html">Толығырақ</a></button>
+        </div>
+
+	<div class="card">
+            <img src="Нү.jpeg" alt="">
+            <p>Нүркен Темірбекұлы</p>
+            <button><a href="Нүркен ағай док.html">Толығырақ</a></button>
+        </div>
+
+
+        <div class="card">
+            <img src="Б.jpeg" alt="">
+            <p>Бақберген Ерғазыұлы</p>
+            <button><a href="Бақберген ағай док.html">Толығырақ</a></button>
+        </div>
+</section>
+
+<section id="subjects">
+<div class="textBox">
+<b>FENOMEN мектебінде оқу үдерісі екі бағытта жүйелі ұйымдастырылған.</b><br><br>
+Таңертеңгі сабақтарда оқушылар мемлекеттік білім беру стандартына сай барлық негізгі пәндерді меңгереді.  
+Ал түстен кейін оқушылардың білімін тереңдету мақсатында ҰБТ-ға сапалы дайындық сабақтары өткізіледі.<br><br>
+Осылайша, FENOMEN мектебі әр оқушыға әрі толыққанды мектеп бағдарламасын, әрі жоғары нәтижеге жеткізетін тиімді дайындықты бірге ұсынады.
+</div>
+<div class="buttons">
+<a href="23.html" class="btn">Сабақ кестесі</a>
+<a href="24.html" class="btn">Курс сабақтары</a>
+</div></section>
+<section class="achievements">
+
+<h1 id="zhetistikter">FENOMEN мектебінің жетістіктері</h1>
+<p class="subtitle">Біздің оқушылар – болашақ чемпиондар ⭐</p>
+<div class="cards">
+
+<div class="card science">
+<h2>🧪 Ғылыми жоба</h2>
+<p class="number">7 оқушы</p>
+<p>Ғылыми жобалар байқауында жүлделі орындар алды.</p>
+</div>
+
+<div class="card unt">
+<h2>🎓 ҰБТ 100+</h2>
+<p class="number"> 100 оқушы</p>
+<p>100+ балл жинап, жоғары нәтижеге жетті.</p>
+</div>
+
+<div class="card olymp">
+<h2>🏆 Аудандық кезең</h2>
+<p class="number">Жүлделі орындар</p>
+<p>Әртүрлі пәндерден жеңімпаз атанды.</p>
+</div>
+
+</div>
+</section>
+<section id="news">
+<h1 class="title">✨ FENOMEN Жаңалықтары</h1>
+
+<div class="news-container">
+
+    <div class="news-card" onclick="openPopup('64.mp4')">
+    <span class="date">28 Қараша</span>
+    <h2>Жаңалық</h2>
+    <p>Видео көру үшін басыңыз</p>
+    <button class="butin">Толығырақ</button>
+</div>
+
+     <div class="news-card" onclick="openPopup('65.mp4')">
+    <span class="date">10 Желтоқсан</span>
+    <h2>Спорт</h2>
+    <p>Видео көру үшін басыңыз</p>
+    <button class="butin">Толығырақ</button>
+</div>
+
+     <div class="news-card" onclick="openPopup('63.mp4')">
+    <span class="date">3 Қыркүйек</span>
+    <h2>Ержан ағай сыйлығы</h2>
+    <p>Видео көру үшін басыңыз</p>
+    <button class="butin">Толығырақ</button>
+</div>
+
+<div class="news-card" onclick="openPopup('67.mp4')">
+    <span class="date">19 Қараша</span>
+    <h2>Күзгі балл</h2>
+    <p>Видео көру үшін басыңыз</p>
+    <button class="butin">Толығырақ</button>
+</div>
+
+</div>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2>Толық ақпарат</h2>
+       <video id="videoPlayer" controls autoplay style="width:56%; border-radius:15px;">
+    <source src="" type="video/mp4">
+</video>
+    </div>
+</div>
+</section>
+
+<script>
+function openPopup(videoName){
+    const video = document.getElementById("videoPlayer");
+    video.src = videoName;
+    document.getElementById("popup").style.display = "flex";
+    video.play();
+}
+
+function closePopup(){
+    const video = document.getElementById("videoPlayer");
+    video.pause();
+    video.src = "";
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+<section id="contact" class="contact-section"> 
+<div class="contact-box">  
+
+<h1 style="color:white;">FENOMEN мектебі – балаңыздың жарқын болашағына алғашқы қадам!</h1>
+
+<p style="font-size:22px; color:white;">
+Заманауи білім, тәжірибелі ұстаздар және қауіпсіз орта – бәрі бір жерде. 
+Әр оқушының қабілетін ашып, көшбасшылыққа жетелейміз. 
+Сапалы біліммен бірге тәрбиеге де ерекше мән береміз. 
+Балаңыздың жетістігі – біздің мақтанышымыз!
+<br> Қазір хабарласыңыз, орындар шектеулі!
+</p>
+
+<br><br>
+
+<div class="contact-buttons">  
+<div class="btn" onclick="openWA()"> 
+<i class="fab fa-whatsapp"></i> WhatsApp
+</div>  
+
+<a class="btn" href="https://instagram.com/fenomen.kaz" target="_blank"> 
+<i class="fab fa-instagram"></i> Instagram 
+</a>  
+
+<a class="btn" href="https://2gis.kz/search/Төлеби%2032а" target="_blank"> 
+📍 Карта 
+</a>  
+
+<div class="btn" onclick="openTaxi()"> 
+🚕 Такси шақыру 
+</div>  
+</div>
+<!-- WhatsApp -->
+<div class="popup" id="wa">
+<div class="popup-box">
+<h2>Кімге жазасыз?</h2>
+
+<a href="https://wa.me/77016349094" target="_blank">
+Нұрәділ Нұрланұлы
+</a>
+
+<a href="https://wa.me/77076971795" target="_blank">
+Гүлшат Еркінбекқызы
+</a>
+
+<a href="https://wa.me/77474794383" target="_blank">
+Бақберген Ерғазыұлы
+</a>
+
+
+
+<button onclick="closeWA()">Жабу</button>
+</div>
+</div>
+<!-- Taxi -->
+<div class="popup" id="taxi">
+<div class="popup-box">
+<h2>Такси таңдаңыз</h2>
+
+<a href="https://3.redirect.appmetrica.yandex.com/route?start-address=Төлеби%2032а&end-address=Төле%20би%2034" target="_blank">
+Yandex Go
+</a>
+
+<a href="https://m.uber.com/ul/?action=setPickup&pickup[formatted_address]=Төлеби%2032а&dropoff[formatted_address]=Төле%20би%2034" target="_blank">
+Uber
+</a>
+
+<a href="https://indriver.com/" target="_blank">
+inDriver
+</a>
+
+<button onclick="closeTaxi()">Жабу</button>
+</div>
+</div>
+<!-- МЫНА ЖЕРГЕ ҚОСТЫҚ -->
+<p style="margin-top:50px; color:white; font-size:18px; letter-spacing:3px; text-align:center;">
+©FENOMEN 2026
+</p>
+
+</div> 
+</section>
+<script>
+function openWA(){document.getElementById("wa").style.display="flex";}
+function closeWA(){document.getElementById("wa").style.display="none";}
+
+function openTaxi(){document.getElementById("taxi").style.display="flex";}
+function closeTaxi(){document.getElementById("taxi").style.display="none";}
+function toggleMenu(){ document.getElementById("menu").classList.toggle("active"); }
+</script>
+
+</body>
+</html>
+

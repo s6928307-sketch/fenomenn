@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FENOMEN Байланыс</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family:"Times New Roman", serif;
+    background-image:url("ФН ФОН.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+/* ОРТА БӨЛІМ */
+.box{
+    text-align:center;
+    padding:80px 20px;
+    background:rgba(0,0,0,0.55);
+    min-height:100vh;
+}
+
+/* ЖАРНАМА МӘТІН */
+h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:22px;
+    margin-bottom:40px;
+}
+
+/* КНОПКАЛАР */
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    background:white;
+    color:black;
+    padding:18px 28px;
+    border-radius:30px;
+    font-size:20px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+    cursor:pointer;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+/* POPUP DARK BLUE */
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+}
+
+.popup-box{
+    background:#001a4d;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    color:white;
+}
+
+.popup-box a{
+    display:block;
+    margin:12px;
+    padding:12px;
+    background:#0055ff;
+    border-radius:12px;
+    text-decoration:none;
+    color:white;
+}
+
+button{
+    margin-top:10px;
+    padding:10px 20px;
+    border-radius:10px;
+    border:none;
+    background:white;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>FENOMEN мектебіне қош келдіңіз!</h1>
+<p>Ертеңгі үздіктерді бүгін тәрбиелейміз ✨  
+Бізбен байланысып, балаңыздың болашағын бірге құрамыз!</p>
+
+<div class="buttons">
+
+<div class="btn" onclick="openWA()">
+<i class="fab fa-whatsapp"></i> WhatsApp
+</div>
+
+<a class="btn" href="https://instagram.com/fenomen.kaz" target="_blank">
+<i class="fab fa-instagram"></i> Instagram
+</a>
+
+<a class="btn" href="https://2gis.kz/search/Төлеби%2032а" target="_blank">
+📍 Карта
+</a>
+
+<div class="btn" onclick="openTaxi()">
+🚕 Такси шақыру
+</div>
+
+</div>
+</div>
+
+
+<!-- WhatsApp -->
+<div class="popup" id="wa">
+<div class="popup-box">
+<h2>Кімге жазасыз?</h2>
+
+<a href="https://wa.me/77016349094" target="_blank">
+Нұрәділ Нұрланұлы
+</a>
+
+<a href="https://wa.me/77076971795" target="_blank">
+Гүлшат Еркінбекқызы
+</a>
+
+<a href="https://wa.me/77474794383" target="_blank">
+Бақберген Ерғазыұлы
+</a>
+
+
+
+<button onclick="closeWA()">Жабу</button>
+</div>
+</div>
+
+
+<!-- Taxi -->
+<div class="popup" id="taxi">
+<div class="popup-box">
+<h2>Такси таңдаңыз</h2>
+
+<a href="https://3.redirect.appmetrica.yandex.com/route?start-address=Төлеби%2032а&end-address=Төле%20би%2034" target="_blank">
+Yandex Go
+</a>
+
+<a href="https://m.uber.com/ul/?action=setPickup&pickup[formatted_address]=Төлеби%2032а&dropoff[formatted_address]=Төле%20би%2034" target="_blank">
+Uber
+</a>
+
+<a href="https://indriver.com/" target="_blank">
+inDriver
+</a>
+
+<button onclick="closeTaxi()">Жабу</button>
+</div>
+</div>
+
+
+<script>
+function openWA(){document.getElementById("wa").style.display="flex";}
+function closeWA(){document.getElementById("wa").style.display="none";}
+
+function openTaxi(){document.getElementById("taxi").style.display="flex";}
+function closeTaxi(){document.getElementById("taxi").style.display="none";}
+</script>
+
+</body>
+</html>

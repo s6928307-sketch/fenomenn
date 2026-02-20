@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Миссия</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background-image: url("ФН ФОН.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Көк жолақ */
+.mission-bar{
+    background-color: rgba(13, 110, 253, 0.9);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Жалпы блок */
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px;
+}
+
+/* Фото */
+.content img{
+    width: 320px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Мәтін */
+.mission-text{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 23px;
+    font-weight: bold;
+    color: #0d6efd;
+    max-width: 600px;
+}
+
+/* Телефон */
+@media (max-width: 768px){
+    .content{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="mission-bar">
+    Ертеңгі үздіктерді, бүгін тәрбиелейміз
+</div>
+
+<!-- 1-БӨЛІМ (Фото сол жақта) -->
+<div class="content">
+    <img src="ағайлар.jpeg" alt="Миссия фотосы">
+
+    <div class="mission-text">
+       Біздің миссия – білім мен тәрбиені ұштастыра отырып, әр оқушының қабілетін толық ашу. Біз тек жақсы нәтиже емес, үздіктердің үздігін тәрбиелеуді мақсат етеміз. Негізгі мақсатымыз – әр шәкіртті 140/140 нәтижеге жеткізіп, білім шыңына шығару. Сапалы білім, жүйелі дайындық және тынымсыз еңбек арқылы біз болашақ көшбасшыларды қалыптастырамыз.
+
+    </div>
+</div>
+
+<!-- 2-БӨЛІМ (Мәтін сол жақта, фото оң жақта) -->
+<div class="content">
+
+    <div class="mission-text">
+        Біздің басты мақсатымыз – әр оқушының білімге деген құштарлығын арттырып, оның мүмкіндігін шексіз дамыту. Біз тек жоғары балл емес, биік мақсатқа ұмтылатын, табанды да талапты шәкірт тәрбиелеуді көздейміз. Әрбір оқушыны 140/140 нәтижеге жеткізу – біздің жүйелі еңбегіміздің көрсеткіші. Сапалы білім беру, нақты стратегия және тұрақты дайындық арқылы біз болашақта ел тізгінін ұстайтын мықты тұлғаларды қалыптастырамыз.
+
+    </div>
+
+    <img src="апайлар.jpeg" alt="Екінші фото">
+
+</div>
+
+</body>
+</html>

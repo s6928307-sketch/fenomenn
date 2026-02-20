@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мектеп сайты</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: DodgerBlue;
+}
+
+section {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    margin-bottom: 40px;
+}
+
+/* Жоғарғы екі сурет */
+.top-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Төменгі бір сурет */
+.bottom-card {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-8px);
+}
+
+.box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Телефонға */
+@media (max-width: 768px) {
+    .top-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section>
+    <h2>Біздің мектеп туралы</h2>
+
+    <div class="top-cards">
+        <div class="box">
+            <img src="тарихы.jpeg" alt="">
+            <h3>Мектептің тарихы</h3>
+        </div>
+
+        <div class="box">
+            <img src="Ашылған жыл.jpeg" alt="">
+            <h3>Ашылған жылы</h3>
+        </div>
+    </div>
+
+    <div class="bottom-card">
+        <div class="box">
+            <img src="https://pm-production-bucket.s3.eu-central-1.amazonaws.com/attachments/blog/image/935/attachment/default-30f8ee0d056fe0fcdfe649f6b9cec0db.jpg" alt="">
+            <h3>Мақсаты мен миссиясы</h3>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>

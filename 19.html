@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ашылған жылы</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+
+    /* ФОН */
+    background-image: url("ФН ФОН.jpg"); /* өз суретіңнің атын жаз */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Жоғарғы darkblue жолақ */
+.header{
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Видео мен мәтін бөлімі */
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px;
+    flex-wrap: wrap;
+
+    
+}
+
+/* Видео */
+video{
+    width: 200px;
+    border-radius: 10px;
+}
+
+/* Мәтін */
+.text{
+    max-width: 400px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    Мектептің ашылған жылы
+</div>
+
+<div class="content">
+    <video src="video1.mp4" controls></video>
+
+    <div class="text">
+        Біздің мектеп 2025 жылы 12 мамыр күні салтанатты түрде ашылды.
+Бұл күн – білім мен болашаққа бастар жаңа қадамның бастауы болды.
+Мектеп заманауи талаптарға сай жабдықталып, оқушыларға сапалы білім мен тәрбие беруді мақсат етеді.
+    </div>
+</div>
+
+</body>
+</html>

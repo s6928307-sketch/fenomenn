@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>FENOMEN Байланыс</title>
+
+<style>
+body{
+    font-family: Arial;
+    background-color:darkblue;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align:center;
+    padding:40px;
+    color:white;
+}
+
+.toptext{
+    background:white;
+    color:black;
+    display:inline-block;
+    padding:18px 25px;
+    border-radius:20px;
+    font-size:18px;
+    margin-bottom:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    line-height:1.6;
+}
+
+form{
+    background:white;
+    padding:30px;
+    width:320px;
+    margin:auto;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin:10px;
+    border-radius:10px;
+    border:1px solid gray;
+    font-size:16px;
+}
+
+button{
+    background:#007bff;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+/* Popup */
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+}
+
+.popup-content{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    color:black;
+    animation:pop 0.3s ease;
+}
+
+@keyframes pop{
+    from{transform:scale(0.7); opacity:0;}
+    to{transform:scale(1); opacity:1;}
+}
+
+.close-btn{
+    margin-top:15px;
+    background:#007bff;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="toptext">
+💙 <b>Болашағыңыз жарқын болсын!</b><br>
+Егер сіз балаңыздың сапалы білім алып, үлкен жетістікке жеткенін қаласаңыз – осы форманы толтырыңыз.<br>
+<b>FENOMEN – білім мен тәрбие тоғысқан орын 🌟</b>
+</div>
+
+<h2>💬 Бізге жазыңыз</h2>
+
+<form onsubmit="showPopup(); return false;">
+<input type="text" placeholder="Атыңыз" required><br>
+
+<input type="tel"
+placeholder="+7 706 680 17 23"
+pattern="\+7[0-9]{10}"
+title="Телефон +7XXXXXXXXXX форматында болсын"
+oninput="
+let num=this.value.replace(/[^0-9]/g,'');
+if(num.startsWith('8')) num='7'+num.substring(1);
+if(!num.startsWith('7')) num='7'+num;
+num=num.substring(0,11);
+this.value='+7'+num.substring(1);
+"
+required>
+<br>
+
+<button type="submit">Жіберу</button>
+</form>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h3>✅ Біз сізге хабарласамыз!</h3>
+    <p>Сенім білдіргеніңіз үшін рақмет 💙</p>
+    <button class="close-btn" onclick="closePopup()">
+    <a href="17.html" style="color:white; text-decoration:none;">Жабу</a>
+</button>
+  </div>
+</div>
+
+<script>
+function showPopup(){
+    document.getElementById("popup").style.display="flex";
+}
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Мұғалім парақшасы</title>
+
+<!-- Font Awesome иконкалар -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+    background-image: url("ФН ФОН.jpg");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 26px;
+    color: MidnightBlue;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+/* Сурет */
+.image-block {
+    text-align: center;
+}
+
+.image-block img {
+    width: 260px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Әлеуметтік желі */
+.social {
+    margin-top: 15px;
+}
+
+.social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 18px;
+    margin: 8px 0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.social a i {
+    font-size: 26px;
+}
+
+.social a.youtube {
+    color: red;
+}
+
+.social a.instagram {
+    color: #E1306C;
+}
+
+.social a:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+/* Мәтін */
+.text-block {
+    width: 300px;
+    font-size: 14px;
+    color: Navy;
+    line-height: 1.5;
+}
+
+.blue-line {
+    background-color: MidnightBlue;
+    color: white;
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 6px 0;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* Кесте */
+.table-block {
+    width: 300px;
+}
+
+.ubt-title {
+    background-color: #1f6fa5;
+    color: white;
+    padding: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.ubt-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border: 2px solid black;
+    font-size: 12px;
+}
+
+.ubt-table td {
+    border: 1px solid black;
+    padding: 4px;
+}
+
+.ubt-table td:first-child {
+    text-align: left;
+}
+
+.ubt-table td:last-child {
+    text-align: center;
+    width: 40px;
+    font-weight: bold;
+}
+
+.ubt-total {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+
+button {
+    margin-top: 30px;
+    padding: 8px 16px;
+    background-color: MidnightBlue;
+    border: none;
+    border-radius: 5px;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">
+   Есиркепов Ержан Жанысбайұлы
+</div>
+
+<div class="container">
+
+    <!-- СУРЕТ -->
+    <div class="image-block">
+        <img src="Е.jpeg" alt="Мұғалім суреті">
+
+    </div>
+
+    <!-- МӘТІН -->
+    <div class="text-block">
+       Физика пәні мұғалімі<br>
+        <span class="blue-line">Магистр, "Педагог-зеріттеуші"</span><br>
+       Қазақстан Республикасы білім және ғылым министірлігі Е.Сағадиевтен Қазақстан Республикасның білім беру жүйесіне дамытуға қосқан зор жеке үлесі үшін <b>"Алғыс"</b>хатымен марапатталған.<br>
+Шымкент қаласының білім басқармасынан білім беру жүйесіне қосқан үлесі үшін Ғани Бейсенбаевтан <b>"Құрмет грамотасын"</b>№3229,Шымкент-2022ж.
+    </div>
+
+    <!-- КЕСТЕ -->
+    <div class="table-block">
+        <div class="ubt-title">
+            2024 ж ҰБТ нәтижелері
+        </div>
+
+        <table class="ubt-table">
+            <tr><td>Ержанқызы Айсәуле</td><td>49</td></tr>
+            <tr><td>Дінисламұлы Шахназар</td><td>48</td></tr>
+            <tr><td>Зебершеева Аруна</td><td>47</td></tr>
+            <tr><td>Уралина Назым</td><td>46</td></tr>
+            <tr><td>Абдиманап Мади</td><td>45</td></tr>
+            <tr><td>Бегманов Арман</td><td>45</td></tr>
+            <tr><td>Байназар Еңлік</td><td>44</td></tr>
+            <tr><td>Шакир Әдемі</td><td>44</td></tr>
+            <tr><td>Қуатбек Нұрпейіс</td><td>44</td></tr>
+            <tr><td>Рысбеков Қуанышбек</td><td>43</td></tr>
+            <tr><td>Убайдулла Аружан</td><td>42</td></tr>
+            <tr><td>Амангелді Дана</td><td>41</td></tr>
+            <tr><td>Әсболатұла Диар</td><td>41</td></tr>
+            <tr><td>Бейсенбаев Нұрбол</td><td>41</td></tr>
+            <tr><td>Нұржанұлы Мәуленәлі</td><td>40</td></tr>
+            <tr><td>Нұрман Қуаныш</td><td>40</td></tr>
+           
+        </table>
+
+        <div class="ubt-total">
+            Жалпы: 50 балл
+        </div>
+    </div>
+
+</div>
+
+<center>
+    <button>
+        <a href="мектеп опыт.html">Басты бетке</a>
+    </button>
+</center>
+
+</body>
+</html>
